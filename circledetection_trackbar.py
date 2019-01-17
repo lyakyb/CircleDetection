@@ -56,6 +56,6 @@ while True:
         print('gb: ' + str(gbVal))
         print('------------------------------------')
     #show the image
-    cv2.imshow(finalWindow, canImg)
+    cv2.imshow(finalWindow, orgImgCopy)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
