@@ -12,11 +12,11 @@ cu = 'Canny Upper'
 p2 = 'Param 2'
 mr = 'Minimum Radius'
 mxr = 'Maximum Radius'
-cv2.createTrackbar(md, finalWindow, 1, 999, emptyFunc)
-cv2.createTrackbar(cu, finalWindow, 1, 255, emptyFunc)
-cv2.createTrackbar(p2, finalWindow, 1, 255, emptyFunc)
-cv2.createTrackbar(mr, finalWindow, 1, 999, emptyFunc)
-cv2.createTrackbar(mxr, finalWindow, 1, 999, emptyFunc)
+cv2.createTrackbar(md, finalWindow, 50, 300, emptyFunc)
+cv2.createTrackbar(cu, finalWindow, 100, 255, emptyFunc)
+cv2.createTrackbar(p2, finalWindow, 100, 255, emptyFunc)
+cv2.createTrackbar(mr, finalWindow, 100, 300, emptyFunc)
+cv2.createTrackbar(mxr, finalWindow, 200, 500, emptyFunc)
 
 orgImg = cv2.imread('TestImages/1.JPG')
 orgImg = cv2.resize(orgImg, (720, 540))
@@ -29,8 +29,6 @@ while True:
     mxrVal = cv2.getTrackbarPos(mxr, finalWindow)
 
     orgImgCopy = orgImg.copy()
-
-
     try:
         medianImg = cv2.medianBlur(orgImg, 5)
         gaussImg = cv2.GaussianBlur(medianImg, (5, 5), 0)
